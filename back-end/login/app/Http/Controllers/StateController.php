@@ -1,17 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\region;
 use Illuminate\Http\Request;
-use App\Http\Controllers\DB;
+use Illuminate\Support\Facades\DB;
+
 class StateController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index($country_id)()
+    public function index($country_id)
     {
-        $data = DB::table('region')->where('country_id', $country_id)->get();
+        $data = DB::table('regions')->where('country_id', $country_id)->get();
         return $data;
     }
 
